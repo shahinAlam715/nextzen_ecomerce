@@ -15,7 +15,46 @@ a{
 
 /* Heder Start */
 
-.menu_bg {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  color: white;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #38bdf8;
+}
+
+.btn {
+  background: #38bdf8;
+  border: none;
+  padding: 8px 15px;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* .menu_bg {
   background-color: #ffff;
   box-shadow:  0 0 10px rgba(255, 255, 255, 0.3),0 6px 15px rgba(0, 0, 0, 0.25);
   position: fixed;
@@ -57,7 +96,7 @@ a{
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
+} */
 
 /* Heder end */
 
