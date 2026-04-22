@@ -1,33 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import nextzen from "../assets/zenlogo.png"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { FaBarsStaggered } from 'react-icons/fa6'
 
 const Header = () => {
-  return (
-    <>
-     <nav className="navbar">
-      <div className="logo">NextZen</div>
 
-      <ul className="nav-links">
-        <Link to="/">
-        <li>Home</li>
-        </Link>
-        <Link to="/conntactt">
-        <li>Shop</li>
-        </Link>
-        <Link to="/about">
-        <li>About</li>
-        </Link>
-         <Link to="/courses">
-        <li>Contact</li>
-         </Link>
+  const [open, setOpen] = useState(false)
+
+  return (
+    <nav className="navbar">
+
+      {/* Logo */}
+      <div className="logo">
+        <img src={nextzen} alt="logo" />
+      </div>
+
+      {/* Nav Links */}
+      <ul className={open ? "nav-links active" : "nav-links"}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/courses">Courses</Link></li>
+        <li><Link to="/conntactt">Contact Us</Link></li>
       </ul>
-         <Link to="/login">
-      <button className="btn">Login</button>
-         </Link>
+
+      {/* Button */}
+      <div className="nav-right">
+        <Link to="/login">
+          <button className="btn">Login</button>
+        </Link>
+
+        {/* Menu Icon */}
+        <div className="bar" onClick={() => setOpen(!open)}>
+          <FaBarsStaggered />
+        </div>
+      </div>
+
     </nav>
-    </>
-    
   )
 }
 
